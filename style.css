@@ -1,0 +1,11 @@
+#board {
+  margin: 20px;
+}
+
+.tile {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin: 2px;
+}
