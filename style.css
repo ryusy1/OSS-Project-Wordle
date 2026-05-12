@@ -1,11 +1,160 @@
-#board {
-  margin: 20px;
+/* 전체 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+}
+
+/* 헤더 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* 메인 컨테이너 */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 게임 보드 */
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+/* 타일 */
 .tile {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
-  margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+/* 타일 상태 */
+.tile.correct {
+    background-color: #6aaa64; /* 초록색 */
+    color: white;
+    border-color: #6aaa64;
+}
+
+.tile.present {
+    background-color: #c8b458; /* 노란색 */
+    color: white;
+    border-color: #c8b458;
+}
+
+.tile.absent {
+    background-color: #d3d6da; /* 회색 */
+    color: white;
+    border-color: #d3d6da;
+}
+
+/* 입력 영역 */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.guess-input {
+    width: 200px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.guess-input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+/* 버튼 */
+.submit-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+.reset-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background-color: #999;
+}
+
+/* 메시지 */
+.message {
+    text-align: center;
+    font-size: 16px;
+    color: #e74c3c;
+    min-height: 20px;
+    margin-bottom: 20px;
+}
+
+.message.success {
+    color: #27ae60;
+}
+
+/* 반응형 (모바일) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .tile {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .guess-input {
+        width: 150px;
+    }
 }
