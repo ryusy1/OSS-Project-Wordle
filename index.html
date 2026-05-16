@@ -3,43 +3,66 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wordle Clone</title>
+    <meta name="theme-color" content="#6aaa64" />
+    <title>Wordle - 한글 워들</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <!-- 헤더 -->
-    <header>
-        <h1>Wordle</h1>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">WORDLE</h1>
+            <div class="header-icons">
+                <button id="help-btn" class="icon-btn" title="게임 규칙">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4M12 8h.01"></path>
+                    </svg>
+                </button>
+                <button id="settings-btn" class="icon-btn" title="설정">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="1"></circle>
+                        <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="divider"></div>
     </header>
 
     <!-- 메인 컨테이너 -->
     <main class="container">
         <!-- 게임 보드 -->
-        <div id="board" class="board"></div>
-
-        <!-- 입력 영역 -->
-        <div class="input-area">
-            <input 
-                type="text" 
-                id="input" 
-                class="guess-input" 
-                maxlength="5" 
-                placeholder="5글자 입력"
-            />
-            <button id="submit-btn" class="submit-btn">제출</button>
+        <div id="board" class="board">
+            <!-- 타일이 동적으로 추가됨 -->
         </div>
 
-        <!-- 메시지 영역 -->
-        <p id="message" class="message"></p>
+        <!-- 입력 영역 -->
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="input" 
+                    class="guess-input" 
+                    maxlength="5" 
+                    placeholder="5글자 입력"
+                    autocomplete="off"
+                />
+                <button id="submit-btn" class="submit-btn">입력</button>
+            </div>
+            
+            <!-- 메시지 영역 -->
+            <p id="message" class="message"></p>
+        </div>
 
         <!-- 게임 초기화 -->
-        <button id="reset-btn" class="reset-btn">다시 시작</button>
+        <button id="reset-btn" class="reset-btn">새 게임</button>
     </main>
 
-    <!-- 스크립트 로드 -->
-    <script src="js/words.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="main.js"></script>
+    <!-- 스크립트 (module type 필수!) -->
+    <script type="module" src="js/words.js"></script>
+    <script type="module" src="js/game.js"></script>
+    <script type="module" src="js/ui.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
